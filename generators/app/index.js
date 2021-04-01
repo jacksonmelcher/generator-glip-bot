@@ -14,24 +14,17 @@ module.exports = class extends Generator {
   }
 
   async prompting() {
-    const answers = await this.prompt([
-      {
-        type: "input",
-        name: "name",
-        message: "What's the project name?",
-        default: _.startCase(this.appname)
-      }
-    ]);
-  }
-  writing() {
-    this.fs.copyTpl(
-      this.templatePath("src/express.html"),
-      this.destinationPath("public/index.html"),
-      { title: "Templating with Yeoman" }
+    // Have Yeoman greet the user.
+    this.log(
+      yosay(
+        `Welcome to the top-notch ${chalk.red(
+          "generator-glip-chatbot"
+        )} generator!`
+      )
     );
   }
 
-  // prompting() {
+  // Prompting() {
   //   // Have Yeoman greet the user.
   //   this.log(
   //     yosay(
@@ -62,7 +55,6 @@ module.exports = class extends Generator {
   // }
 
   install() {
-    const appDir = path.join(process.cwd(), this.name);
     if (this.useYarn) {
       this.log("Yarn flag set");
       this.spawnCommandSync("yarn");
