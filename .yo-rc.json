@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Jackson Melcher",
+      "authorEmail": "jackson.melcher@ringcentral.com",
+      "authorUrl": "https://github.com/jacksonmelcher"
+    }
+  }
+}
