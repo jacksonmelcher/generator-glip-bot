@@ -14,4 +14,31 @@ module.exports = class extends Generator {
       )
     );
   }
+
+  writing() {
+    this.fs.copyTpl(this.templatePath("src"), this.destinationPath("src"), {
+      title: "Templating with Yeoman"
+    });
+    this.fs.copyTpl(
+      this.templatePath("package.json"),
+      this.destinationPath("package.json"),
+      {
+        title: "Templating with Yeoman"
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath("LICENSE"),
+      this.destinationPath("LICENSE"),
+      {
+        title: "Templating with Yeoman"
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath("README.md"),
+      this.destinationPath("README.md"),
+      {
+        title: "Templating with Yeoman"
+      }
+    );
+  }
 };
