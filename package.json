@@ -1,6 +1,6 @@
 {
   "name": "generator-glip-bot",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generate a Glip chatbot",
   "homepage": "",
   "author": {
@@ -19,7 +19,8 @@
     "chatbot",
     "yeoman",
     "yo",
-    "yeoman-generator"
+    "yeoman-generator",
+    "generator-glip-bot"
   ],
   "devDependencies": {
     "eslint": "^6.6.0",
@@ -38,7 +39,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "yeoman-generator": "^5.2.0",
+    "yeoman-generator": "^3.1.1",
     "yosay": "^2.0.2"
   },
   "jest": {

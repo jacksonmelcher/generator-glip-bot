@@ -13,12 +13,22 @@ module.exports = class extends Generator {
         )} generator!`
       )
     );
+
+    this.answers = await this.prompt([
+      {
+        type: "input",
+        name: "title",
+        message: "Your project title"
+      }
+    ]);
   }
 
   writing() {
-    this.fs.copyTpl(this.templatePath("src"), this.destinationPath("src"), {
-      title: "Templating with Yeoman"
-    });
+    this.fs.copyTpl(
+      this.templatePath("src"),
+      this.destinationPath("src"),
+      { title: this.answers.title } // user answer `title` used
+    );
     this.fs.copyTpl(
       this.templatePath("package.json"),
       this.destinationPath("package.json"),
