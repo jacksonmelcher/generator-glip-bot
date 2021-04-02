@@ -37,8 +37,8 @@
     "npm": ">= 7.0.0"
   },
   "dependencies": {
-    "chalk": "4.1.0",
-    "yeoman-generator": "5.2.0",
+    "chalk": "^4.1.0",
+    "yeoman-generator": "^5.2.0",
     "yosay": "^2.0.2"
   },
   "jest": {
