@@ -24,11 +24,18 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    this.log(this.templatePath("src/eventHandler"));
+
     this.fs.copyTpl(
-      this.templatePath("src"),
-      this.destinationPath("src"),
-      { title: this.answers.title } // user answer `title` used
+      this.templatePath("src/eventHandler.js"),
+      this.destinationPath("src/eventHandler.js")
     );
+    this.fs.copyTpl(
+      this.templatePath("src/express.js"),
+      this.destinationPath("src/express.js")
+      // { title: this.answers.title } // user answer `title` used
+    );
+
     this.fs.copyTpl(
       this.templatePath("package.json"),
       this.destinationPath("package.json"),
@@ -50,5 +57,9 @@ module.exports = class extends Generator {
         title: "Templating with Yeoman"
       }
     );
+  }
+
+  install() {
+    this.yarnInstall();
   }
 };
