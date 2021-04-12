@@ -36,16 +36,16 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("package.json"),
-      this.destinationPath("package.json"),
-      {
-        title: "Templating with Yeoman"
-      }
+      this.destinationPath("package.json")
     );
     this.fs.copyTpl(
       this.templatePath(".babelrc"),
       this.destinationPath(".babelrc")
     );
-    this.fs.copyTpl(this.templatePath(".env"), this.destinationPath(".env"));
+    this.fs.copyTpl(
+      this.templatePath("sample.env"),
+      this.destinationPath("sample.env")
+    );
 
     this.fs.copyTpl(
       this.templatePath(".gitignore"),
