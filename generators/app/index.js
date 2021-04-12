@@ -24,8 +24,6 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.log(this.templatePath("src/eventHandler"));
-
     this.fs.copyTpl(
       this.templatePath("src/eventHandler.js"),
       this.destinationPath("src/eventHandler.js")
@@ -44,18 +42,13 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copyTpl(
-      this.templatePath("LICENSE"),
-      this.destinationPath("LICENSE"),
-      {
-        title: "Templating with Yeoman"
-      }
+      this.templatePath(".babelrc"),
+      this.destinationPath(".babelrc")
     );
+    this.fs.copyTpl(this.templatePath(".env"), this.destinationPath(".env"));
     this.fs.copyTpl(
-      this.templatePath("README.md"),
-      this.destinationPath("README.md"),
-      {
-        title: "Templating with Yeoman"
-      }
+      this.templatePath(".gitignore"),
+      this.destinationPath(".gitignore")
     );
   }
 
