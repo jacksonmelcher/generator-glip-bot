@@ -46,11 +46,6 @@ module.exports = class extends Generator {
       this.templatePath("sample.env"),
       this.destinationPath("sample.env")
     );
-
-    this.fs.copyTpl(
-      this.templatePath(".gitignore"),
-      this.destinationPath(".gitignore")
-    );
   }
 
   install() {
